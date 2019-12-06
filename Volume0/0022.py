@@ -13,16 +13,17 @@ while 1:
         try:
             arr.append(int(input()))  
         except:break
-        
-        # 最初から-が続いていた場合は、意味がないので無視
+           
         if arr[i] < 0:
+            # 合計が0以下になってしまった場合はこれ以上計算しても意味がないのでスルーする
             if sum > 0:
                 # plusが連続して続いていた場合
                 if(isPlus):
-                    # それまでの合計値を保存する
+                    # 最大値を更新
                     maxValue = max(maxValue,sum)
                     isPlus = False
                 sum += arr[i]
+                # 0未満になったら、1から計算し直す
                 if sum < 0 :
                     sum = 0
         else :
@@ -30,7 +31,7 @@ while 1:
             isPlus = True
     if sum != 0 :
         maxValue = max(maxValue,sum)
-    # 全てminusなので、入力値から最小のものを探す    
+    # 入力値が全てminusなので、入力値から最大のものを探す    
     else :
         for i in arr:
             maxValue = max(maxValue,i)
