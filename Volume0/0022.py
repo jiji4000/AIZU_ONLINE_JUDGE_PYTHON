@@ -6,7 +6,6 @@ while 1:
     if(n == 0):break
 
     sum = 0
-    sumArray = []
     isPlus = True
     isPush = False
     maxValue = -100000
@@ -21,9 +20,9 @@ while 1:
             # plusが連続して続いていた場合
             if(isPlus):
                 # それまでの合計値を保存する
-                sumArray.append(sum)
+                maxValue = max(maxValue,sum)
                 isPlus = False
-                sum = num
+                sum += num
             # minusが続いていた場合
             else:
                 sum += num
@@ -34,18 +33,10 @@ while 1:
                 isPush = True
                 sum += num
             else:
-                sumArray.append(sum)
+                if (sum < 0):
+                    sum = 0
                 isPlus = True
-                sum = num
-    if sum != 0 :
-        sumArray.append(sum)
-
-    # 最大値をチェックする
-    sum = 0
-    for i in range(len(sumArray)):
-        sum += sumArray[i]
-        if(sum < 0):
-            sum = 0
-        else:
-            maxValue = max(maxValue,sum)
+                sum += num
+    if isPush :
+        maxValue = max(maxValue,sum)
     print(maxValue)
