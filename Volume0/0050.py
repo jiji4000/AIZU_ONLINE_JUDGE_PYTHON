@@ -1,0 +1,1 @@
+print(input().replace("apple","_").replace("peach","apple").replace("_","peach"))
