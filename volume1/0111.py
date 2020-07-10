@@ -1,5 +1,5 @@
 # nf 参考:http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3371166#1_
-en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + " .,-\'?"
+en = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,-\'?"
 
 de = {"101":" ","000000":"\'","000011":",","10010001":"-","010001":".","000001":"?",
           "100101":"A","10011010":"B","0101":"C","0001":"D","110":"E","01001":"F",
@@ -12,7 +12,8 @@ while 1:
         s = input()
         c = ""
         for i in s:
-            c += format(en.find(i), "05b")
+            f = format(en.find(i), "05b")
+            c += f
         ans = ""
         tmp = ""
         for i in c:
