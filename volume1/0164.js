@@ -2,7 +2,6 @@ let input = require('fs').readFileSync('/dev/stdin', 'utf8')
 let Arr = (input.trim()).split("\n")
 
 for(var i = 0;i < Arr.length - 1;i += 2){
-    let n = Arr[i]
     let arr = Arr[i + 1].split(" ").map(Number)
     let turn = false
     let index = 0
@@ -13,7 +12,7 @@ for(var i = 0;i < Arr.length - 1;i += 2){
             if(ohajiki < 0){
                 ohajiki = 0
             }
-            if(++index >= n){
+            if(++index >= arr.length){
                 index = 0
             }
         }
