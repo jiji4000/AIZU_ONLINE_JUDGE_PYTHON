@@ -1,6 +1,5 @@
 let input = require('fs').readFileSync('/dev/stdin', 'utf8');
 let Arr = (input.trim()).split("\n")
-let dp = new Array(12).fill(0)
 let pIndex = 0
 let WEIGHT = [2,5,10,15,20,25]
 let SIZE = [60,80,100,120,140,160]
