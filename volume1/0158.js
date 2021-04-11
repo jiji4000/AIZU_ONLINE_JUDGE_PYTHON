@@ -15,4 +15,3 @@ for(var i = 0;i < Arr.length - 1;++i){
     }
     console.log(ans)
 }
- 
